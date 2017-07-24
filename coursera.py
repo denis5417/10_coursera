@@ -102,4 +102,4 @@ def parse_args():
 
 
 if __name__ == '__main__':
-    output_courses_info_to_xlsx(parse_args().output, get_courses_list(fetch_xml()))
+    output_courses_info_to_xlsx(parse_args().output, get_courses_list(fetch_xml())[:parse_args().quantity])
