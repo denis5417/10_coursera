@@ -4,7 +4,7 @@ import courses_data_get as cdg
 from fetch_webpage import fetch_webpage
 
 
-def title_worksheet(worksheet):
+def set_title_to_worksheet(worksheet):
     worksheet.cell(column=1, row=1, value="Название курса")
     worksheet.cell(column=2, row=1, value="Ссылка")
     worksheet.cell(column=3, row=1, value="Языки")
@@ -15,7 +15,7 @@ def title_worksheet(worksheet):
 def output_courses_info_to_xlsx(filepath, courses_list):
     workbook = Workbook()
     worksheet = workbook.active
-    title_worksheet(worksheet)
+    set_title_to_worksheet(worksheet)
     courses_cell_id = 0
     for row in range(2, len(courses_list) + 2):
         course_info = cdg.agregate_course_info(fetch_webpage(courses_list[courses_cell_id]))
