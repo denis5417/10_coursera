@@ -17,8 +17,8 @@ def agregate_course_info(html):
 
 
 def get_course_name(html_soup):
-    name = html_soup.find("h1")
-    if not name:
+    course_name = html_soup.find("h1")
+    if not course_name:
         return None
     return name.contents[0].encode('raw-unicode-escape').decode('utf-8-sig')
 
