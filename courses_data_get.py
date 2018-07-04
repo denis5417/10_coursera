@@ -20,7 +20,7 @@ def get_course_name(html_soup):
     course_name = html_soup.find("h1")
     if not course_name:
         return None
-    return name.contents[0].encode('raw-unicode-escape').decode('utf-8-sig')
+    return course_name.contents[0].encode('raw-unicode-escape').decode('utf-8-sig')
 
 
 def get_course_languages(html_soup):
